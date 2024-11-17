@@ -1,9 +1,25 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UPI Payment</title>
-  <meta http-equiv="refresh" content="0; url='upi://pay?pa=9640142949@ybl&pn=ssfotogarage&cu=INR'" />
+  <script type="text/javascript">
+    window.onload = function() {
+      var upiLink = "upi://pay?pa=9640142949@ybl&pn=ssfotogarage&cu=INR";
+      var redirectUrl = upiLink;
+      
+      // Try to open the UPI app using the link
+      window.location.href = redirectUrl;
+
+      // In case the UPI app doesn't open, provide a fallback link
+      setTimeout(function() {
+        window.location.href = "https://www.google.com/search?q=upi+payment+apps";
+      }, 500); // If UPI app doesn't open, show search for UPI apps
+    };
+  </script>
 </head>
 <body>
-  <p>If you are not redirected automatically, <a href="upi://pay?pa=9640142949@ybl&pn=ssfotogarage&cu=INR">click here</a>.</p>
+  <p>If you're not redirected automatically, <a href="upi://pay?pa=9640142949@ybl&pn=ssfotogarage&cu=INR">click here</a> to pay.</p>
 </body>
 </html>
